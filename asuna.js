@@ -16,7 +16,7 @@ client.events = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord);
 })
 
-mongoose.connect('mongodb+srv://Dune:adamis07@asuna.uwntr.mongodb.net/Data', {
+mongoose.connect(process.env.MONGODB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -32,5 +32,5 @@ mongoose.connect('mongodb+srv://Dune:adamis07@asuna.uwntr.mongodb.net/Data', {
 
 
 
-client.login('NzMxMDg0NTc5MjA0NjI4NTMw.Xwg5kg.xsd2A3v5DyKlgeMZXgtKwWnzUrk');
+client.login(process.env.BOT_TOKEN);
 
